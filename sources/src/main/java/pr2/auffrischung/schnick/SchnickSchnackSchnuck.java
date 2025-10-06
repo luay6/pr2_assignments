@@ -4,13 +4,15 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class SchnickSchnackSchnuck {
-
+    final static int PAPER = 1;
+    final static int ROCK = 2;
+    final static int SCISSOR =3 ;
     public static void main(String[] args) {
         // Initialisieren der Spielvariablen
         int playerPoints = 0;
         int computerPoints = 0;
         Scanner scanner = new Scanner(System.in);
-        Random random = new Random();
+        Random rayndom = new Random();
 
         // Drei Runden spielen
         for (int round = 1; round <= 3; round++) {
@@ -59,6 +61,7 @@ public class SchnickSchnackSchnuck {
     // Methode um das Ergebnis der Runde zu evaluieren
     public static int evaluateRound(char playerMove, int computerMove) {
         // TODO: Ahmad Berechne das Ergebnis der Runde (1 = Spieler gewinnt, -1 = Computer gewinnt, 0 = Unentschieden) 
+        
         return 0; // Platzhalter, muss ersetzt werden
     }
 
