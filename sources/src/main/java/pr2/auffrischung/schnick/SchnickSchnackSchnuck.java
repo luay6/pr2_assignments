@@ -6,13 +6,14 @@ import java.util.Random;
 public class SchnickSchnackSchnuck {
     final static int PAPER = 1;
     final static int ROCK = 2;
-    final static int SCISSOR =3 ;
+    final static int SCISSOR =3;
+    final static int UNGUELTIG = 10;
     public static void main(String[] args) {
         // Initialisieren der Spielvariablen
         int playerPoints = 0;
         int computerPoints = 0;
         Scanner scanner = new Scanner(System.in);
-        Random rayndom = new Random();
+        Random random = new Random();
 
         // Drei Runden spielen
         for (int round = 1; round <= 3; round++) {
@@ -60,9 +61,27 @@ public class SchnickSchnackSchnuck {
 
     // Methode um das Ergebnis der Runde zu evaluieren
     public static int evaluateRound(char playerMove, int computerMove) {
-        // TODO: Ahmad Berechne das Ergebnis der Runde (1 = Spieler gewinnt, -1 = Computer gewinnt, 0 = Unentschieden) 
-        
-        return 0; // Platzhalter, muss ersetzt werden
+        int playerMoveInt;
+        switch (playerMove) {
+        case 'r' : playerMoveInt = ROCK;
+        break;
+        case 'p' : playerMoveInt = PAPER;
+        break;
+        case 's' : playerMoveInt = SCISSOR;
+        break;
+        default : playerMoveInt = UNGUELTIG;
+        }
+        //Player gewinn
+        if (playerMoveInt - computerMove == 1)
+            return 1;
+        //Computer gewinn
+        else if(playerMoveInt - computerMove ==2)
+            return -1;
+        //Unentschieden
+        else if(playerMoveInt - computerMove == 0)
+            return 0;
+        else
+            return UNGUELTIG;
     }
 
     // Methode um das Ergebnis der Runde anzuzeigen
@@ -75,6 +94,13 @@ public class SchnickSchnackSchnuck {
 
     // Methode um den Endpunktestand anzuzeigen
     public static void displayFinalScore(int playerPoints, int computerPoints) {
-        // TODO: Ahmad Ausgabe des Endpunktestands
+        System.out.println("Ergebnis - Du " + playerPoints + "Punkt(e), Computer " + computerPoints + "Punkt(e)");
+        if(computerPoints < playerPoints)
+            System.out.println("Du hast im Spiel gewonnen");
+        else if(computerPoints > playerPoints)
+            System.out.println("Computer hat im Spiel gewonnen");
+        else
+            System.out.println("Unentschieden");
+        
     }
 }
