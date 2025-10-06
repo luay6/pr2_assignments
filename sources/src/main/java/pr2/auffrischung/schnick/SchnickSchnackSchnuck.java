@@ -41,28 +41,37 @@ public class SchnickSchnackSchnuck {
     // Methode um den Zug des Spielers zu erhalten
     public static char getPlayerMove(Scanner scanner) {
         // TODO: Implementiere Eingabeaufforderung und Rückgabe des Spielerzuges
+        
+        //Majd
+        
         return ' '; // Platzhalter, muss ersetzt werden
     }
 
     // Methode um den Zug des Computers zu bekommen
     public static int getComputerMove(Random random) {
         // TODO: Zufällige Auswahl für den Computer (Rock, Paper, Scissors)
+        
+        //Majd
+        
         return 0; // Platzhalter, muss ersetzt werden
     }
 
     // Methode um das Ergebnis der Runde zu evaluieren
     public static int evaluateRound(char playerMove, int computerMove) {
-        // TODO: Berechne das Ergebnis der Runde (1 = Spieler gewinnt, -1 = Computer gewinnt, 0 = Unentschieden)
+        // TODO: Ahmad Berechne das Ergebnis der Runde (1 = Spieler gewinnt, -1 = Computer gewinnt, 0 = Unentschieden) 
         return 0; // Platzhalter, muss ersetzt werden
     }
 
     // Methode um das Ergebnis der Runde anzuzeigen
     public static void displayRoundResult(int round, char playerMove, int computerMove, int roundResult, int playerPoints, int computerPoints) {
+        
+        //majd
+        
         // TODO: Ausgabe des Ergebnisses der Runde
     }
 
     // Methode um den Endpunktestand anzuzeigen
     public static void displayFinalScore(int playerPoints, int computerPoints) {
-        // TODO: Ausgabe des Endpunktestands
+        // TODO: Ahmad Ausgabe des Endpunktestands
     }
 }
