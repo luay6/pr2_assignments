@@ -4,9 +4,9 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class SchnickSchnackSchnuck {
-    final static int PAPER = 1;
+    final static int PAPER = 3;
     final static int ROCK = 2;
-    final static int SCISSOR =3;
+    final static int SCISSOR =1;
     final static int UNGUELTIG = 10;
     public static void main(String[] args) {
         // Initialisieren der Spielvariablen
@@ -102,11 +102,20 @@ public class SchnickSchnackSchnuck {
         default : playerMoveInt = UNGUELTIG;
         }
         //Player gewinn
-        if (playerMoveInt - computerMove == 1)
+        if (Math.abs(playerMoveInt - computerMove) == 1) {
+            if (playerMoveInt > computerMove)
             return 1;
+            else
+                return -1;
+        }
         //Computer gewinn
-        else if(playerMoveInt - computerMove ==2)
-            return -1;
+        else if(Math.abs(playerMoveInt - computerMove) == 2) {
+            if (playerMoveInt > computerMove)
+                return -1;
+                else
+                    return 1;
+            }
+            
         //Unentschieden
         else if(playerMoveInt - computerMove == 0)
             return 0;
